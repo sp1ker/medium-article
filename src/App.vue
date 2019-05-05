@@ -1,11 +1,20 @@
 <template>
   <div id="app">
-    <Button>simple Button</Button>
+    <Button theme="action" type="link">simple Button</Button>
   </div>
 </template>
 
 <script>
-import Button from "./components/Button/Button";
+import { compose } from "bem-vue";
+import ButtonPresenter from "./components/Button/Button.vue";
+import { withButtonThemeAction } from "./components/Button/_theme/Button_theme_action.js";
+import { withButtonTypeLink } from "./components/Button/_type/Button_type_link";
+
+const Button = compose(
+  withButtonThemeAction,
+  withButtonTypeLink
+)(ButtonPresenter);
+
 export default {
   name: "App",
   components: {
