@@ -2,9 +2,13 @@
   <div id="app">
     <Button :theme="theme?'action':false" :type="type?'link':false">Button</Button>
     <hr>
-    <input type="checkbox" v-model="theme">theme: action
+    <label>
+      <input type="checkbox" v-model="theme">theme: action
+    </label>
     <br>
-    <input type="checkbox" v-model="type">type: link
+    <label>
+      <input type="checkbox" v-model="type">type: link
+    </label>
     <br>
   </div>
 </template>
