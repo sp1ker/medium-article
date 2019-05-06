@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <Button theme="action" type="link">simple Button</Button>
+    <Button :theme="theme?'action':false" :type="type?'link':false">Button</Button>
+    <hr>
+    <input type="checkbox" v-model="theme">theme: action
+    <br>
+    <input type="checkbox" v-model="type">type: link
+    <br>
   </div>
 </template>
 
@@ -19,11 +24,27 @@ export default {
   name: "App",
   components: {
     Button
+  },
+  data() {
+    return {
+      theme: false,
+      type: false
+    };
   }
 };
 </script>
 
 <style>
+.Button {
+}
+
+.Button_theme_action:before {
+  content: "Action ";
+}
+.Button_type_link:after {
+  content: " Link";
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
