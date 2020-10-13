@@ -1,0 +1,3 @@
+.Button_theme_action:after {
+  content: " with Action";
+}

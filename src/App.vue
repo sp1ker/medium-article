@@ -1,15 +1,13 @@
 <template>
   <div id="app">
-    <Button :theme="theme?'action':false" :type="type?'link':false">Button</Button>
-    <hr>
-    <label>
-      <input type="checkbox" v-model="theme">theme: action
-    </label>
-    <br>
-    <label>
-      <input type="checkbox" v-model="type">type: link
-    </label>
-    <br>
+    <Button :theme="theme ? 'action' : false" :type="type ? 'link' : false"
+      >Button</Button
+    >
+    <hr />
+    <label> <input type="checkbox" v-model="theme" />theme: action </label>
+    <br />
+    <label> <input type="checkbox" v-model="type" />type: link </label>
+    <br />
   </div>
 </template>
 
@@ -27,28 +25,18 @@ const Button = compose(
 export default {
   name: "App",
   components: {
-    Button
+    Button,
   },
   data() {
     return {
       theme: false,
-      type: false
+      type: false,
     };
-  }
+  },
 };
 </script>
 
 <style>
-.Button {
-}
-
-.Button_theme_action:before {
-  content: "Action ";
-}
-.Button_type_link:after {
-  content: " Link";
-}
-
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
